@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "64dcdec8-ca00-4c46-abe4-070fb62be122",
+		"name": "vendor management system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "vendor GET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/vendors/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "satish 339070ab-5ad2-4293-922e-922028b8c63d",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"xyz\",\r\n    \"contact_details\" : \"1234567589\",\r\n    \"address\" : \"jrg\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/vendors/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase Order POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "satish 339070ab-5ad2-4293-922e-922028b8c63d",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vendor_code\": \"0b6ed4d6-9368-41bd-8f78-35cbe4359e40\",\r\n    \"items\" : {\r\n        \"fruits\" : 20,\r\n        \"vegetables\" : 30\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/purchase_orders/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase order by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/purchase_orders/20460ba7-4b1e-4a38-849b-c6bd99a915e1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						"20460ba7-4b1e-4a38-849b-c6bd99a915e1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating status of PO",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"po_number\": \"77ea19f3-f062-4579-ab32-2bf6a1748ed5\",\r\n    \"status\" :\"completed\",\r\n    \"quality_rating\" : 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/purchase_orders/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor performance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/vendors/0b6ed4d6-9368-41bd-8f78-35cbe4359e40/performance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						"0b6ed4d6-9368-41bd-8f78-35cbe4359e40",
+						"performance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase Order acknowledge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "satish 339070ab-5ad2-4293-922e-922028b8c63d",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vendor_code\" : \"0b6ed4d6-9368-41bd-8f78-35cbe4359e40\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/purchase_orders/77ea19f3-f062-4579-ab32-2bf6a1748ed5/acknowledge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						"77ea19f3-f062-4579-ab32-2bf6a1748ed5",
+						"acknowledge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vendor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/vendors/{vendor_id}/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						"{vendor_id}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "purchase order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/purchase_orders/{po_id}/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						"{po_id}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update vendor",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "satish 339070ab-5ad2-4293-922e-922028b8c63d",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vendor_code\": \"0b6ed4d6-9368-41bd-8f78-35cbe4359e40\",\r\n    \"name\" : \"hanuman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/vendors/0b6ed4d6-9368-41bd-8f78-35cbe4359e40/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						"0b6ed4d6-9368-41bd-8f78-35cbe4359e40",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
